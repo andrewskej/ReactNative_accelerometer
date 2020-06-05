@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 
 export default class FrontBall extends Component {
     state = {
-        x:'',
-        y:''
+        x:0,
+        y:0
     }
 
 
@@ -18,7 +18,7 @@ export default class FrontBall extends Component {
                     x,y
                 },() => console.log(this.state))
             )
-        },500)
+        },10)
    }
 
    

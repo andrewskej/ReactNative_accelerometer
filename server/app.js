@@ -33,9 +33,9 @@ app.post('/update', (req,res) => {
     axios({
         method:'get',
         url,
-        data:{
-            x, y
-        }
+        // data:{
+        //     x, y
+        // }
     })
     .then(function (response) {
         res.send(JSON.stringify(response.data));
@@ -43,17 +43,16 @@ app.post('/update', (req,res) => {
     .catch(function (error) {
         console.log('error?:' , error);
     });
-
-
-
 })
 
 //this should give x, y to react
 app.get('/update', (req, res) => {
-    console.log('req.data:' , req.body)
-
     console.log('send this to React ->')
+    //for some reason, using passed data gives undefined sometimes. safer to use global var for this...
+    // const {x,y} = req.body;
+    // console.log(x, y)
     console.log(accel_x, accel_y)
+    // res.json({x , y})
     res.json({x:accel_x, y:accel_y})
 })
 
