@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import axios from 'axios';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 
 
 export default function Ball({position}){
@@ -12,7 +11,6 @@ export default function Ball({position}){
                 'y:', Math.ceil(top,1), 
                 'z:', Math.round(z,1))
 
-    //this should update the coord to node server, yet axios keeps failing now
     // localhost in here refers to the device itself, so I need a real ip to wire up
     let url = 'http://192.168.2.76:3002/update'; 
     fetch(url, {

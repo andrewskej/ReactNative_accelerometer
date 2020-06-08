@@ -1,10 +1,11 @@
 const express=require('express');
 const router = express.Router();
-const cors = require('cors')
 const path = require('path');
+const cors = require('cors')
 const axios = require('axios');
-const app = express();
 const bodyParser = require("body-parser"); 
+const app = express();
+
 app.use(cors());
 app.set("view engine", "ejs"); 
 app.set("views", __dirname + "/views"); 
@@ -51,8 +52,8 @@ app.get('/update', (req, res) => {
     //for some reason, using passed data gives undefined sometimes. safer to use global var for this...
     // const {x,y} = req.body;
     // console.log(x, y)
-    console.log(accel_x, accel_y)
     // res.json({x , y})
+    console.log(accel_x, accel_y)
     res.json({x:accel_x, y:accel_y})
 })
 
